@@ -9,17 +9,20 @@
 
 ## > 10k ★
 
+- **[face-api.js](https://github.com/justadudewhohacks/face-api.js)** by [Vincent Mühler](https://github.com/justadudewhohacks)<br>
+  JavaScript API for face detection and face recognition in the browser and nodejs with tensorflow.js.
+
 - **[fd](https://github.com/sharkdp/fd)** by [David Peter](https://github.com/sharkdp)<br>
   A simple, fast and user-friendly alternative to 'find'.
 
 - **[PHPUnit](https://github.com/sebastianbergmann/phpunit)** by [Sebastian Bergmann](https://github.com/sebastianbergmann)<br>
   The PHP Unit Testing framework.
-  
+
 ## > 5k ★
 
 - **[PHP code coverage](https://github.com/sebastianbergmann/php-code-coverage)** by [Sebastian Bergmann](https://github.com/sebastianbergmann)<br>
   The PHP Unit Testing framework.
-  
+
 ## > 1k ★
 
 - **[httpsnoop](https://github.com/felixge/httpsnoop)** by [Felix Geisendörfer](https://github.com/felixge)<br>
@@ -27,7 +30,7 @@
 
 - **[Laravel API Documentation Generator](https://github.com/mpociot/laravel-apidoc-generator)** by [Marcel Pociot](https://github.com/mpociot)<br>
   Laravel API Documentation Generator.
-  
+
 ## Contributing
 
 It's hard to calculate project popularity so we use stars as a measurement. It's not quite fair, but it is what we have here on Github.
