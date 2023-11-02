@@ -6,7 +6,8 @@ export const CLIENT_SECRET = process.env.IGDB_CLIENT_SECRET;
 
 export const TOKEN_URL = `https://id.twitch.tv/oauth2/token?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&grant_type=client_credentials`;
 
-export const COVER_BIG = 't_cover_big';
 export const COVER_SMALL = 't_cover_small';
+export const COVER_BIG = 't_cover_big';
 
+export const SCREENSHOT_MED = 't_screenshot_med';
 export const SCREENSHOT_BIG = 't_screenshot_big';
