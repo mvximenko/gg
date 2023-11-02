@@ -19,8 +19,8 @@ const Header = () => {
   };
 
   return (
-    <header className='absolute h-24 w-full'>
-      <div className='container h-full mx-auto px-8 flex items-center'>
+    <header className='absolute top-0 h-24 w-full'>
+      <div className='container h-full mx-auto px-4 sm:px-8 flex items-center'>
         <Link href='/' className='font-bold text-4xl'>
           GG
         </Link>

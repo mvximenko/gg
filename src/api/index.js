@@ -1,5 +1,14 @@
 import { API_URL, CLIENT_ID, TOKEN_URL } from '@/config';
 
+const gamesByRating = `
+  fields
+    name,
+    cover.image_id;
+  sort aggregated_rating desc;
+  where aggregated_rating_count > 20 & aggregated_rating != null & rating != null & category = 0;
+  limit 12;
+`;
+
 const fullGameInfo = `
   fields
     name,
@@ -57,11 +66,18 @@ const api = {
     })
       .then(async (response) => {
         const data = await response.json();
-        return data[0];
+        return data;
       })
       .catch((error) => {
         return error;
       });
+  },
+
+  getGamesByRating() {
+    return this.request({
+      resource: '/games',
+      body: gamesByRating,
+    });
   },
 
   getGameById(gameId) {
