@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Background from './_components/background';
 import api from '@/api';
 import { IMAGE_API, COVER_BIG } from '@/config';
 
@@ -11,7 +12,12 @@ export default async function Home() {
 
   return (
     <main className='container mx-auto'>
-      <div className='home-hero absolute container top-0 h-[100vh] sm:h-auto aspect-[18/9] bg-[85%] sm:bg-center bg-cover bg-no-repeat -z-10' />
+      <Background
+        src='/hero.avif'
+        classNames='h-[100vh] sm:h-auto aspect-[18/9]'
+        imgClassNames='object-[85%]'
+        gradientClass='home-gradient'
+      />
 
       <div className='mt-56 px-4 sm:px-8'>
         <h1 className='text-5xl sm:text-6xl mt-8 sm:pt-8 font-bold c-text-shadow'>
@@ -30,7 +36,11 @@ export default async function Home() {
 
         <div className='mt-5 grid grid-cols-3 grid-rows-2 sm:grid-cols-6 gap-2'>
           {games.map((game) => (
-            <Link href={`/games/${game.id}`} key={game.id}>
+            <Link
+              key={game.id}
+              className='aspect-[3/4]'
+              href={`/games/${game.id}`}
+            >
               <img
                 alt={`${game.name} cover`}
                 src={`${IMAGE_API}/${COVER_BIG}/${game?.cover?.image_id}.png`}
