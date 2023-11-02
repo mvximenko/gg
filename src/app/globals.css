@@ -16,11 +16,10 @@ body {
   text-shadow: 0px -1px 18px rgba(0, 0, 0, 1);
 }
 
-.home-hero {
+.home-gradient {
   background-image:
     linear-gradient(rgba(8, 18, 31, 0), rgba(8, 18, 31, 0), rgba(8, 18, 31, 0.2), rgb(8, 18, 31)),
-    linear-gradient(to right, rgb(8, 18, 31) 0%, rgba(4, 120, 194, 0.1) 50%, rgba(136, 32, 51, 0) 80%, rgb(8, 18, 31) 100%),
-    url("../assets/images/hero.jpg")
+    linear-gradient(to right, rgb(8, 18, 31) 0%, rgba(4, 120, 194, 0.1) 50%, rgba(136, 32, 51, 0) 80%, rgb(8, 18, 31) 100%)
 }
 
 @media screen and (max-width: 640px) {

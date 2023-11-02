@@ -11,3 +11,4 @@ export const COVER_BIG = 't_cover_big';
 
 export const SCREENSHOT_MED = 't_screenshot_med';
 export const SCREENSHOT_BIG = 't_screenshot_big';
+export const IMAGE_HD = 't_720p';

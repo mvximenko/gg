@@ -12,6 +12,10 @@ const nextConfig = {
   experimental: {
     webpackBuildWorker: true,
   },
+  reactStrictMode: true,
+  images: {
+    domains: ['images.igdb.com'],
+  },
 };
 
 module.exports = nextConfig;

@@ -18,10 +18,9 @@ const Background = ({
       <Image
         alt='Background'
         src={src ?? `${IMAGE_API}/${SCREENSHOT_MED}/${imageId}.png`}
-        className={imgClassNames}
+        className={'object-cover ' + imgClassNames}
         onLoad={handleImageOnLoad}
         style={{ ...css.fade }}
-        objectFit='cover'
         unoptimized
         fill
       />

@@ -1,12 +1,11 @@
-import Link from 'next/link';
 import Background from './_components/background';
+import GameLink from './_components/game-link';
 import api from '@/api';
-import { IMAGE_API, COVER_BIG } from '@/config';
 
 export default async function Home() {
   const games = await api.getGamesByRating();
 
-  if (!games || !games[0].name) {
+  if (!games || !games?.[0]?.name) {
     redirect('/404');
   }
 
@@ -36,18 +35,7 @@ export default async function Home() {
 
         <div className='mt-5 grid grid-cols-3 grid-rows-2 sm:grid-cols-6 gap-2'>
           {games.map((game) => (
-            <Link
-              key={game.id}
-              className='aspect-[3/4]'
-              href={`/games/${game.id}`}
-            >
-              <img
-                alt={`${game.name} cover`}
-                src={`${IMAGE_API}/${COVER_BIG}/${game?.cover?.image_id}.png`}
-                className='rounded-xl'
-                loading='lazy'
-              />
-            </Link>
+            <GameLink key={game.id} {...game} />
           ))}
         </div>
       </div>
