@@ -12,6 +12,7 @@ const gamesByRating = `
 const fullGameInfo = `
   fields
     name,
+    summary,
     aggregated_rating, 
     cover.image_id, 
 
