@@ -1,19 +1,31 @@
+import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import Rating from './_components/rating';
 import Background from '@/app/_components/background';
 import CustomImage from '@/app/_components/custom-image';
+import Details from './_components/details';
 import IconSearch from '@/assets/icons/search.svg?react';
 import api from '@/api';
 
 export default async function Home({ params }) {
   const game = await api.getGameById(+params.id);
 
+  console.log('game', game);
+
   if (!game || !game?.[0]?.name) {
     redirect('/404');
   }
 
-  const { name, cover, genres, aggregated_rating, summary, screenshots } =
-    game[0];
+  const {
+    name,
+    cover,
+    genres,
+    aggregated_rating,
+    summary,
+    screenshots,
+    similar_games,
+    ...details
+  } = game[0];
 
   return (
     <>
@@ -64,6 +76,22 @@ export default async function Home({ params }) {
                   size='s-md'
                 />
               </div>
+            ))}
+          </div>
+
+          <Details {...details} />
+
+          <h2 className='mt-10 text-2xl font-bold mb-2'>You Might Also Like</h2>
+
+          <div className='mt-4 grid grid-rows-2 sm:grid-cols-6 gap-2'>
+            {similar_games?.map((game) => (
+              <Link
+                className='relative aspect-[3/4] rounded-xl c-bg-dark-blue'
+                key={game.id}
+                href={`/games/${game.id}`}
+              >
+                <CustomImage {...game} altText='Cover' />
+              </Link>
             ))}
           </div>
         </div>
