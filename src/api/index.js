@@ -48,7 +48,7 @@ const api = {
 
   async getToken() {
     try {
-      const res = await fetch(TOKEN_URL, { method: 'POST' });
+      const res = await fetch(TOKEN_URL, { method: 'POST', cache: 'no-store' });
       this.token = await res.json();
     } catch (error) {
       console.error(error);
@@ -85,6 +85,14 @@ const api = {
     return this.request({
       resource: '/games',
       body: `${fullGameInfo} where id = (${gameId});`,
+    });
+  },
+
+  search(query) {
+    console.log(`fields name; search "${query};`);
+    return this.request({
+      resource: '/games',
+      body: `fields name, cover.image_id; where cover.image_id != null; search "${query}"; limit 100;`,
     });
   },
 };

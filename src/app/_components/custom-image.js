@@ -11,6 +11,7 @@ const CustomImage = ({
   size = 'c-big',
   cover,
   source,
+  classes = '',
 }) => {
   const { handleImageOnLoad, css } = useImageOnLoad();
 
@@ -23,7 +24,7 @@ const CustomImage = ({
       }
       onLoad={handleImageOnLoad}
       style={{ ...css.fade }}
-      className={'rounded-xl object-cover'}
+      className={'object-cover rounded-xl ' + classes}
       unoptimized
       fill
     />

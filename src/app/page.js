@@ -19,7 +19,7 @@ export default async function Home() {
         <CustomImage source='/hero.avif' classes='object-[85%]' />
       </Background>
 
-      <div className='mt-56 px-4 sm:px-8'>
+      <div className='mt-32 px-3 sm:px-10'>
         <h1 className='text-5xl sm:text-6xl mt-8 sm:pt-8 font-bold c-text-shadow'>
           Not sure what
           <br />

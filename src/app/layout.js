@@ -13,9 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
-      <body className={inter.className}>
+      <body className={inter.className + ' flex flex-col min-h-screen'}>
         <Header />
-        <main className='container mx-auto'>{children}</main>
+        <main className='container mx-auto grow mt-24'>{children}</main>
         <Footer />
       </body>
     </html>

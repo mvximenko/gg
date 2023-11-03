@@ -11,25 +11,23 @@ const Header = () => {
     event.preventDefault();
 
     if (event.target[0].value) {
-      // TODO:
-      // router.push(`/search?q=${event.target[0].value}`);
-      router.push(`/games/${+event.target[0].value}`);
+      router.push(`/search?q=${event.target[0].value}`);
       event.target.reset();
     }
   };
 
   return (
     <header className='absolute top-0 h-24 w-full'>
-      <div className='container h-full mx-auto px-4 sm:px-8 flex items-center'>
+      <div className='container h-full mx-auto px-3 sm:px-10 flex items-center'>
         <Link href='/' className='font-bold text-4xl'>
           GG
         </Link>
 
         <form
-          className='flex-grow max-w-lg px-4 sm:px-8'
+          className='flex-grow max-w-lg ml-4 sm:px-8'
           onSubmit={handleSubmit}
         >
-          <div className='flex items-center c-bg-dark-blue px-3 rounded-full'>
+          <div className='flex items-center c-bg-dark-blue px-3 rounded-full justify-between'>
             <input
               className='w-full p-2 font-medium bg-transparent'
               placeholder='Search'
