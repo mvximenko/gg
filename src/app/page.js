@@ -11,7 +11,7 @@ export default async function Home() {
   }
 
   return (
-    <main className='container mx-auto'>
+    <>
       <Background
         classes='h-[100vh] sm:h-auto aspect-[18/9]'
         gradientClass='home-gradient'
@@ -46,6 +46,6 @@ export default async function Home() {
           ))}
         </div>
       </div>
-    </main>
+    </>
   );
 }
