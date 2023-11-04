@@ -44,7 +44,7 @@ const Details = ({
         <div className='grid grid-cols-3 gap-1 mb-4 text-slate-300'>
           {releases.length
             ? releases.map((release) => (
-                <Fragment key={release.key}>
+                <Fragment key={release.id}>
                   <span className='col-span-2'>{release.platform.name}</span>
                   <span className='text-right'>{release.human}</span>
                 </Fragment>

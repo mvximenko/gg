@@ -13,6 +13,7 @@ const CustomImage = ({
   cover,
   source,
   classes = '',
+  ...props
 }) => {
   const { handleImageOnLoad, css } = useImageOnLoad();
 
@@ -28,6 +29,7 @@ const CustomImage = ({
       className={twMerge('object-cover rounded-xl', classes)}
       unoptimized
       fill
+      {...props}
     />
   );
 };
