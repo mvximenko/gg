@@ -19,7 +19,10 @@ const Header = () => {
   return (
     <header className='absolute top-0 h-24 w-full'>
       <div className='container h-full mx-auto px-4 xl:px-40 flex items-center'>
-        <Link href='/' className='font-bold text-4xl'>
+        <Link
+          href='/'
+          className='font-bold text-4xl transition-colors md:hover:text-slate-400'
+        >
           GG
         </Link>
 

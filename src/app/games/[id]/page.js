@@ -40,20 +40,18 @@ export default async function Home({ params }) {
             />
           </div>
 
-          <div>
+          <div className='text-slate-300'>
             <h1 className='text-2xl mt-8 md:m-0 xl:text-4xl font-bold'>
               {name}
             </h1>
             <Rating value={aggregated_rating} />
-            <p className='mt-6 text-base xl:text-lg font-medium text-slate-300'>
-              {summary}
-            </p>
+            <p className='mt-6 text-base xl:text-lg font-medium '>{summary}</p>
 
-            <div className='flex flex-wrap mt-4 md:mt-6 gap-2.5 text-slate-300'>
+            <div className='flex flex-wrap mt-4 md:mt-6 gap-2.5'>
               {genres?.map((genre) => (
                 <Link
                   href={`/search?genres=${genre.id}`}
-                  className='grow md:grow-0 rounded-xl text-center p-2 c-bg-tangaroa'
+                  className='grow md:grow-0 rounded-xl text-center p-2 c-bg-tangaroa transition-colors md:hover:text-slate-100'
                   key={genre.id}
                 >
                   {genre.name}

@@ -8,6 +8,7 @@ const Footer = () => {
         href='https://github.com/mvximenko/gg'
         rel='noopener noreferrer'
         target='_blank'
+        className='transition-colors md:hover:text-slate-400'
       >
         <Github />
       </Link>

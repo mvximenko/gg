@@ -44,7 +44,7 @@ const Category = ({ title, items, field }) =>
         {items.map((item) => (
           <Link
             href={!field ? item.url : `/search?${field}=${item.id}`}
-            className='flex gap-1 items-center c-bg-tangaroa py-1 px-2 rounded-xl'
+            className='flex gap-1 items-center c-bg-tangaroa py-1 px-2 rounded-xl transition-colors md:hover:text-slate-100'
             key={item.id}
             {...(!field && {
               target: '_blank',
