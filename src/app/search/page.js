@@ -3,14 +3,12 @@ import CustomImage from '@/app/_components/custom-image';
 import api from '@/api';
 
 export default async function Search({ searchParams }) {
-  const games = await api.search(searchParams.q);
+  const games = await api.search(searchParams);
 
   return (
     <div className='px-4 xl:px-40'>
-      <h1 className='text-2xl font-bold'>Results for: {searchParams.q}</h1>
-
       {games.length ? (
-        <div className='mt-4 grid grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2 sm:gap-6'>
+        <div className='mt-4 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-y-6 gap-x-2'>
           {games.map((game) => (
             <Link key={game.id} href={`/games/${game.id}`}>
               <figure>
@@ -18,7 +16,7 @@ export default async function Search({ searchParams }) {
                   <CustomImage {...game} />
                 </div>
 
-                <figcaption className='mt-2 text-xs	md:text-lg font-bold text-center line-clamp-3'>
+                <figcaption className='mt-2.5 text-xs	sm:mt-3 sm:text-base font-bold text-center line-clamp-3'>
                   {game.name}
                 </figcaption>
               </figure>

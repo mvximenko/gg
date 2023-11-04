@@ -1,6 +1,11 @@
 import { Fragment } from 'react';
 import Category from './category';
 
+const getCompaniesByRole = (companies, role) =>
+  companies?.reduce((acc, value) => {
+    return value[role] ? [...acc, { ...value.company }] : acc;
+  }, []);
+
 const Details = ({
   release_dates,
   websites,
@@ -10,8 +15,8 @@ const Details = ({
   game_engines,
   themes,
 }) => {
-  const developers = involved_companies?.filter((company) => company.developer);
-  const publishers = involved_companies?.filter((company) => company.publisher);
+  const developers = getCompaniesByRole(involved_companies, 'developer');
+  const publishers = getCompaniesByRole(involved_companies, 'publisher');
 
   const links = websites?.filter((website) =>
     [1, 3, 5, 6, 9, 14, 18].includes(website.category)
@@ -37,28 +42,46 @@ const Details = ({
       <div>
         <h2 className='text-lg font-bold mb-2'>Release Dates</h2>
         <div className='grid grid-cols-3 gap-1 mb-4 text-slate-300'>
-          {releases.map((release) => (
-            <Fragment key={release.key}>
-              <span className='col-span-2'>{release.platform.name}</span>
-              <span className='text-right'>{release.human}</span>
-            </Fragment>
-          ))}
+          {releases.length
+            ? releases.map((release) => (
+                <Fragment key={release.key}>
+                  <span className='col-span-2'>{release.platform.name}</span>
+                  <span className='text-right'>{release.human}</span>
+                </Fragment>
+              ))
+            : 'N/A'}
         </div>
 
-        <Category title='Developers' items={developers} path='company.name' />
-        <Category title='Publishers' items={publishers} path='company.name' />
+        <Category
+          title='Developers'
+          items={developers}
+          field='involved_companies.company'
+        />
+        <Category
+          title='Publishers'
+          items={publishers}
+          field='involved_companies.company'
+        />
       </div>
 
       <div>
-        <Category title='Game Modes' items={game_modes} />
-        <Category title='Player Perspectives' items={player_perspectives} />
-        <Category title='Themes' items={themes} />
-        <Category title='Game Engine' items={game_engines} />
+        <Category title='Game Modes' items={game_modes} field='game_modes' />
+        <Category
+          title='Player Perspectives'
+          items={player_perspectives}
+          field='player_perspectives'
+        />
+        <Category title='Themes' items={themes} field='themes' />
+        <Category
+          title='Game Engines'
+          items={game_engines}
+          field='game_engines'
+        />
       </div>
 
       <div>
-        <Category title='Links' items={links} external />
-        <Category title='Stores' items={stores} external />
+        <Category title='Links' items={links} />
+        <Category title='Stores' items={stores} />
       </div>
     </div>
   );

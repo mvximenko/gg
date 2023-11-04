@@ -1,4 +1,4 @@
-import resolve from '@/utils/resolve';
+import Link from 'next/link';
 import IconLink from '@/assets/icons/link.svg?react';
 import IconSteam from '@/assets/icons/steam.svg?react';
 import IconReddit from '@/assets/icons/reddit.svg?react';
@@ -36,22 +36,23 @@ const IconWithText = ({ id, ...props }) => {
   );
 };
 
-const Category = ({ title, items, path, external }) =>
+const Category = ({ title, items, field }) =>
   !!items?.length && (
     <>
       <h2 className='text-lg font-bold mb-2'>{title}</h2>
       <div className='flex flex-wrap gap-2 mb-4 text-slate-300'>
         {items.map((item) => (
-          <button
+          <Link
+            href={!field ? item.url : `/search?${field}=${item.id}`}
             className='flex gap-1 items-center c-bg-tangaroa py-1 px-2 rounded-xl'
             key={item.id}
+            {...(!field && {
+              target: '_blank',
+              rel: 'noopener noreferrer',
+            })}
           >
-            {external ? (
-              <IconWithText id={item.category} />
-            ) : (
-              item.name ?? resolve(item, path)
-            )}
-          </button>
+            {!field ? <IconWithText id={item.category} /> : item.name}
+          </Link>
         ))}
       </div>
     </>

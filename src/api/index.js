@@ -88,10 +88,24 @@ const api = {
     });
   },
 
-  search(query) {
+  search({ name = '', ...fields }) {
+    let str = '';
+
+    for (const [key, value] of Object.entries(fields)) {
+      str += ` & ${key} = ${value}`;
+    }
+
     return this.request({
       resource: '/games',
-      body: `fields name, cover.image_id; where cover.image_id != null; search "${query}"; limit 100;`,
+      body: `
+      fields
+        name,
+        cover.image_id;
+      where
+        cover.image_id != null
+        ${str};
+      ${name ? `search "${name}";` : ''}
+      limit 100;`,
     });
   },
 };

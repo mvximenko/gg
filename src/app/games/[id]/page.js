@@ -7,9 +7,9 @@ import Details from './_components/details';
 import api from '@/api';
 
 export default async function Home({ params }) {
-  const game = await api.getGameById(+params.id);
+  const game = await api.getGameById(params.id);
 
-  if (!game || !game?.[0]?.name) {
+  if (!game?.[0]?.name) {
     redirect('/404');
   }
 
@@ -49,14 +49,15 @@ export default async function Home({ params }) {
               {summary}
             </p>
 
-            <div className='flex flex-wrap mt-4 sm:mt-6 gap-2.5 text-slate-300'>
+            <div className='flex flex-wrap mt-4 md:mt-6 gap-2.5 text-slate-300'>
               {genres?.map((genre) => (
-                <div
+                <Link
+                  href={`/search?genres=${genre.id}`}
                   className='grow md:grow-0 rounded-xl text-center p-2 c-bg-tangaroa'
                   key={genre.id}
                 >
                   {genre.name}
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -88,7 +89,7 @@ export default async function Home({ params }) {
 
         <h2 className='mt-10 text-2xl font-bold mb-2'>You Might Also Like</h2>
 
-        <div className='mt-4 grid grid-cols-2 md:grid-cols-5 gap-2'>
+        <div className='mt-3 md:mt-5 grid grid-cols-3 sm:grid-cols-5 grid-rows-3 sm:grid-rows-2 auto-rows-[0]	overflow-hidden gap-2'>
           {similar_games?.map((game) => (
             <Link
               className='relative aspect-[3/4] rounded-xl c-bg-dark-blue'

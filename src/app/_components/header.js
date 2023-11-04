@@ -11,7 +11,7 @@ const Header = () => {
     event.preventDefault();
 
     if (event.target[0].value) {
-      router.push(`/search?q=${event.target[0].value}`);
+      router.push(`/search?name=${event.target[0].value}`);
       event.target.reset();
     }
   };
