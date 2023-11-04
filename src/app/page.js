@@ -1,6 +1,6 @@
+import Link from 'next/link';
 import Background from './_components/background';
 import CustomImage from './_components/custom-image';
-import Link from 'next/link';
 import api from '@/api';
 
 export default async function Home() {
@@ -38,7 +38,7 @@ export default async function Home() {
           Top Rated Games
         </h2>
 
-        <div className='mt-5 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 grid-rows-2 sm:auto-rows-[0]	overflow-hidden gap-2'>
+        <div className='mt-5 grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 grid-rows-2 sm:auto-rows-[0] overflow-hidden gap-2'>
           {games.map((game) => (
             <Link
               key={game.id}

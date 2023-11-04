@@ -2,9 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Override Next.js default styles */
 body {
-  background-color: #0a121f;
-  color: #f2f4f7;
+  background-color: #0a121f !important;
+  color: #f2f4f7 !important;
+}
+
+main:has(.next-error-h1) div:last-of-type {
+  max-height: calc(100vh - 12.5rem);
+}
+
+.next-error-h1 {
+  border-right: 1px solid #f2f4f7 !important;
 }
 
 /* Custom utilities  */
