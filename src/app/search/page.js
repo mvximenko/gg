@@ -6,7 +6,7 @@ export default async function Search({ searchParams }) {
   const games = await api.search(searchParams.q);
 
   return (
-    <div className='px-3 sm:px-10'>
+    <div className='px-4 xl:px-40'>
       <h1 className='text-2xl font-bold'>Results for: {searchParams.q}</h1>
 
       {games.length ? (

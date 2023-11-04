@@ -19,7 +19,7 @@ export default async function Home() {
         <CustomImage source='/hero.avif' classes='object-[85%]' />
       </Background>
 
-      <div className='mt-32 px-3 sm:px-10'>
+      <div className='mt-32 px-4 xl:px-40'>
         <h1 className='text-5xl sm:text-6xl mt-8 sm:pt-8 font-bold c-text-shadow'>
           Not sure what
           <br />
@@ -34,7 +34,7 @@ export default async function Home() {
           Top Rated Games
         </h2>
 
-        <div className='mt-5 grid grid-cols-3 grid-rows-2 sm:grid-cols-6 gap-2'>
+        <div className='mt-5 grid grid-cols-3 sm:grid-cols-5 2xl:grid-cols-6 grid-rows-2 sm:auto-rows-[0]	overflow-hidden gap-2'>
           {games.map((game) => (
             <Link
               key={game.id}
