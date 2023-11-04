@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { twMerge } from 'tailwind-merge';
 import useImageOnLoad from '@/hooks/useImageOnLoad';
 import { IMAGE_API, IMAGE_SIZES } from '@/config';
 
@@ -24,7 +25,7 @@ const CustomImage = ({
       }
       onLoad={handleImageOnLoad}
       style={{ ...css.fade }}
-      className={'object-cover rounded-xl ' + classes}
+      className={twMerge('object-cover rounded-xl', classes)}
       unoptimized
       fill
     />

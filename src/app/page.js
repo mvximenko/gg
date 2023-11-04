@@ -13,7 +13,7 @@ export default async function Home() {
   return (
     <>
       <Background
-        classes='h-[100vh] sm:h-auto aspect-[18/9]'
+        classes='h-[100vh] xl:h-auto aspect-[18/9]'
         gradientClass='home-gradient'
       >
         <CustomImage source='/hero.avif' classes='object-[85%]' />

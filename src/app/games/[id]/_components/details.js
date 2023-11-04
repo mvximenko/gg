@@ -33,7 +33,7 @@ const Details = ({
     : [];
 
   return (
-    <div className='mt-6 grid gap-10 grid-cols-3'>
+    <div className='mt-6 md:grid grid-cols-2 gap-5 xl:grid-cols-3 xl:gap-10 '>
       <div>
         <h2 className='text-lg font-bold mb-2'>Release Dates</h2>
         <div className='grid grid-cols-3 gap-1 mb-4 text-slate-300'>

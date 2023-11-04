@@ -89,7 +89,6 @@ const api = {
   },
 
   search(query) {
-    console.log(`fields name; search "${query};`);
     return this.request({
       resource: '/games',
       body: `fields name, cover.image_id; where cover.image_id != null; search "${query}"; limit 100;`,
