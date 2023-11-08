@@ -16,11 +16,15 @@ export default async function Home() {
         classes='h-[100vh] xl:h-auto aspect-[18/9]'
         gradientClass='home-gradient'
       >
-        <CustomImage
-          source='/hero.avif'
-          classes='object-[85%]'
-          priority={true}
-        />
+        <picture>
+          <source type='image/avif' srcSet='/hero.avif' />
+          <source type='image/webp' srcSet='/hero.webp' />
+          <CustomImage
+            source='/hero.jpg'
+            classes='object-[85%]'
+            priority={true}
+          />
+        </picture>
       </Background>
 
       <div className='mt-32 px-4 xl:px-40'>
