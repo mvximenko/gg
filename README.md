@@ -20,5 +20,5 @@ IGDB_CLIENT_SECRET=<YOUR_IGDB_CLIENT_SECRET>
 ```
 
 ```
-npm start
+npm run dev
 ```
