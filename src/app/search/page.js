@@ -12,7 +12,7 @@ export default async function Search({ searchParams }) {
           {games.map((game) => (
             <Link key={game.id} href={`/games/${game.id}`}>
               <figure>
-                <div className='relative aspect-[3/4] rounded-xl c-bg-dark-blue'>
+                <div className='relative aspect-[3/4] rounded-xl c-bg-dark-blue transition md:hover:brightness-110'>
                   <CustomImage {...game} />
                 </div>
 

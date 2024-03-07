@@ -90,7 +90,7 @@ export default async function Home({ params }) {
         <div className='mt-3 md:mt-5 grid grid-cols-3 sm:grid-cols-5 grid-rows-3 sm:grid-rows-2 auto-rows-[0]	overflow-hidden gap-2'>
           {similar_games?.map((game) => (
             <Link
-              className='relative aspect-[3/4] rounded-xl c-bg-dark-blue'
+              className='relative aspect-[3/4] rounded-xl c-bg-dark-blue transition md:hover:brightness-110'
               key={game.id}
               href={`/games/${game.id}`}
             >

@@ -47,7 +47,7 @@ export default async function Home() {
             <Link
               key={game.id}
               href={`/games/${game.id}`}
-              className='relative aspect-[3/4] rounded-xl c-bg-dark-blue'
+              className='relative aspect-[3/4] rounded-xl c-bg-dark-blue transition md:hover:brightness-110'
             >
               <CustomImage {...game} altText='Cover' />
             </Link>
