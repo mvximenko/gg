@@ -31,7 +31,7 @@ export default async function Home({ params }) {
       </Background>
 
       <div className='px-4 xl:px-40 xl:mb-20 mt-4 xl:mt-24'>
-        <div className='md:grid grid-cols-[0.4fr_1fr] lg:grid-cols-[0.25fr_1fr] gap-6'>
+        <div className='md:grid grid-cols-[max(236px)_1fr] gap-6'>
           <div className='w-2/5 mx-auto md:m-0 md:w-full relative aspect-[3/4] rounded-xl c-bg-dark-blue'>
             <CustomImage
               name={name}
